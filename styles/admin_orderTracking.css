@@ -1,0 +1,158 @@
+
+#order-tracking-page h1{
+    text-align: center;
+    background-color: #152d47;
+    color: white;
+    border-radius: 15px;
+    word-spacing: 10px;
+    margin-top: 20px;
+}
+
+#order-tracking-page #all{
+  background-color: #152d47;
+  color:white;
+}
+
+#order-tracking-page nav{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
+    margin-top: 20px;
+}
+#order-tracking-page nav p{
+padding:10px;
+}
+
+#order-tracking-page nav p:hover{
+    cursor: pointer;
+    background-color: #152d47;
+    color: white;
+}
+
+#order-tracking-page .functions{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bolder;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 5px;
+    padding:0 20px;
+}
+
+#order-tracking-page .searchFunc{
+    display: flex;
+    justify-content: space-around;
+    width:40%;
+}
+#order-tracking-page .searchFunc input{
+    width:70%;
+    margin:0;
+}
+#order-tracking-page .searchFunc label, #order-tracking-page select{
+    height: 25px;
+    margin: 22px 5px 0 0;
+}
+#order-tracking-page #searchSub{
+    display:none;
+}
+#order-tracking-page #search_icon , #order-tracking-page #search{
+    height: 25px;
+    margin: 22px 0 20px 0;
+}
+#order-tracking-page #search_icon{
+cursor: pointer;
+color:#152d47;
+}
+
+#order-tracking-page table{
+    border:1px solid black;
+    background-color: white;
+    width:100%;
+    margin: auto;
+    border-spacing: 0;
+    margin-bottom: 20px;
+}
+#order-tracking-page thead th{
+border-bottom: 1px solid black;
+padding:5px;
+background-color: #152d47;
+color: white;
+font-weight: lighter;
+text-align: center;
+}
+#order-tracking-page td{
+    text-align: center;
+    padding:10px;
+}
+#order-tracking-page tr:hover{
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    cursor: pointer;
+}
+
+
+#order-tracking-page .popupSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #181824ce;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+#order-tracking-page #updatePopup {
+  background-color: #181824ce;
+  width: 40vw;
+  padding: 20px;
+}
+#updatePopup form {
+  display: flex;
+  flex-direction: column;
+}
+#order-tracking-page #updatePopup form h3{
+  color:white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#order-tracking-page #updatePopup form label{
+  color:#fff;
+}
+#order-tracking-page #updatePopup form input {
+  padding: 5px 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+#order-tracking-page .radio{
+  /* display: flex;
+  justify-content: space-between; */
+}
+#order-tracking-page #close-popup-updateform {
+  position: absolute;
+  transform: translate(-30px, -30px);
+  cursor: pointer;
+  font-size: 30px;
+  color: red;
+}
+#order-tracking-page #updateProduct {
+  width: 30%;
+  margin: auto;
+  background-color: #fff;
+  color: black;
+  padding: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+#order-tracking-page #updateProduct:hover{
+  text-decoration: underline;
+}

@@ -1,0 +1,170 @@
+/* Payment form styles */
+*{
+  font-family: "Libre Franklin", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --baseFont: "Libre Franklin", sans-serif;
+  --dark: #181824;
+  --lightColor: #152d47;
+  --mediumFont: "Lato", sans-serif;
+}
+
+
+body{
+  /* background-image: url("https://media0.giphy.com/media/A5ffIYwJoEpVcMOYiO/giphy.gif"); */
+  background-image: url("https://cdn.dribbble.com/users/410907/screenshots/4606457/packaging.gif");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* backdrop-filter: blur(2px); */
+}
+
+.black_belt{
+  background-color: #000;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 40px;
+}
+.black_belt img{
+  width: 100px;
+}
+
+.go-back-product a{
+  color: #fafafa;  
+  transition: 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.go-back-product a:hover{
+  text-decoration: underline;
+}
+
+.address-form-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90vh;
+}
+.address-form-container{
+  /* border: 1px solid red; */
+  padding: 10px 40px;
+  width: 40vw;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  border-radius: 6px;
+  /* display: flex; */
+  /* justify-content: space-between; */
+}
+.address-form-container h2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.address-container{
+  width: 40vw;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #ffffffe5;
+}
+input, textarea{
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  color: #000;
+  margin: 4px 0 12px 0;
+  border: 1px solid var(--lightColor);
+  outline: 1px solid var(--lightColor);
+  font-weight: 400;
+}
+
+.address-submit{
+  display: block;
+  width: 200px;
+  margin: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 18px;
+  border: none;
+  background-color: var(--lightColor);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: bold;
+  border: 1px solid var(--lightColor);
+}
+.address-submit:hover{
+  background-color: #152d4737;
+  color: var(--lightColor);
+  border: 1px solid var(--lightColor);
+}
+
+
+.order-summary-container{
+  height: 80vh;
+  padding: 10px 40px 10px 70px;
+  width: 100%;
+}
+#order-summary{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #ffffffe5;
+}
+#order-summary h2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+#order-summary table{
+  width: 100%;
+}
+#order-summary table tr *{
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--lightColor);
+}
+.td-center{
+  text-align: center;
+}
+#order-summary table tr .grand-total{
+  text-align: center;
+  border-bottom: 3px double red;
+  color: rgb(9, 185, 9);
+}
+.total-row{
+  background-color: #00000012;
+}
+
+
+
+/* ***************  */
+/* paypent fomr start  */
+
+#payment-section{
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  /* width: 40vw; */
+  /* background-color: #fff; */
+  display: none;
+}
+#address-section{
+  /* display: none; */
+  /* border: 1px solid red; */
+}
+#back-address{
+  padding: 3px 26px;
+  font-size: 18px;
+  background-color: var(--lightColor);
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid var(--lightColor);
+}
+#back-address:hover{
+  background-color: #152d4737;
+  color: var(--lightColor);
+  border: 1px solid var(--lightColor);
+}

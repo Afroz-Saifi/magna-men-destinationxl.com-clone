@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome Admin</title>
+    <link rel="icon" href="./images/favicon.jpeg" type="image/icon type">
+    <link rel="icon" href="" type="image/icon type">
+    <link rel="stylesheet" href="./styles/admin.css" />
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/admin_productsDashboard.css">
+    <link rel="stylesheet" href="./styles/admin_orderTracking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Lato&family=Rubik&display=swap"
+    rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      />
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- welcome admin popup  -->
+      <div class="wecome-popup">
+        <div class="welcome-text">
+          Welcome Admin <i class="fa-solid fa-face-smile"></i>
+        </div>
+      </div>
+
+      <!-- want to add new product popup  -->
+      <div class="hii-admin-main">  
+        <div class="hii-admin-popup">
+          <img src="./images/hiiAdmin.png" alt="" id="hii-admin-logo">
+          <div class="hii-admin-content">
+            <i class="fa-solid fa-circle-xmark" id="close-hii-admin"></i>
+            <p class="hii-admin-title">hii Admin</p>
+            <p>Want to add new product ?</p>
+            <button id="add-by-hi">ADD NEW PRODUCT</button>
+          </div>
+        </div>
+      </div>
+
+
+    <span id="dashboardScroll"></span>
+    <nav class="topNav">
+      <div class="name-logo-container">
+        <i class="fa-solid fa-bars" id="openMenu"></i>
+        <img src="./images/magna_logo_black.png" alt="" class="magna" onclick="logOutAdmin()">
+      </div>
+      <div class="nav-right-container">
+        <div>
+          <img
+            src="https://png.pngitem.com/pimgs/s/128-1280822_check-mark-box-clip-art-blue-admin-icon.png"
+            alt=""
+            class="admin-logo"
+          />
+          <p>Welcome Admin</p>
+          <button id="log-out" onclick="logOutAdmin()">LOG OUT</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- popup add product form  -->
+    <section class="form-popup-section">
+        <div class="popup-form">
+            <i class="fa-solid fa-circle-xmark" id="close-popup-form"></i>
+            <form id="add-product">
+                <input type="text" placeholder="Name" id="name" required />
+                <input type="text" placeholder="Image" id="image" style="width: 100%;" required />
+                <input type="text" placeholder="Color Icon" id="colorIcon" style="width: 100%;" required />
+                <select id="category" required>
+                    <option value="tshirt">tshirt</option>
+                    <option value="pants_shorts">pants_shorts</option>
+                    <option value="hoodie">hoodie</option>
+                </select>
+                <input type="number" placeholder="Price" id="price" required />
+                <input type="text" placeholder="special" id="special" />
+                <textarea id="sale_message" cols="30" rows="5" placeholder="sale-message" ></textarea>
+                <button id="add-product" type="submit" style="background-color: #181824;">ADD</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- hamburger -->
+    <section class="left-section">
+        <div class="logo-container">
+            <img src="./images/Magnawhite.png" alt="" class="magna magnaWhite"  onclick="logOutAdmin()">
+            <i class="fa-solid fa-xmark" id="closeMenu"></i>
+        </div>
+        <div class="links-container">
+          <ul>
+            <li><a href="#dashboardScroll"><i class="fa-solid fa-cube"></i>Dashboard</a></li>
+            <li><a href="#usersScroll"><i class="fa-solid fa-users"></i>Users</a></li>
+            <li><a href="#admin_product"><i class="fa-solid fa-industry"></i></i>Products</a></li>
+            <li><a href="#order-tracking-page"><i class="fa-solid fa-truck-fast"></i>Orders</a></li>
+            <li id="open-form"><a href="#"><i class="fa-solid fa-circle-plus"></i>Add New Product</a></li>
+            <li id="open-form"><a href="#outTeam"><i class="fa-brands fa-teamspeak"></i>Our Team</a></li>
+          </ul>
+        </div>
+        <p id="settings"><i class="fa-sharp fa-solid fa-gear"></i>Settings<i class="fa-sharp fa-solid fa-angle-down"></i></p>
+        <p class="logoutHam" onclick="logOutAdmin()"> <i class="fa-solid fa-right-from-bracket"></i> Log Out </p>
+      </section>
+
+      
+
+
+      <div class="dashboard-navigation">
+        <nav>
+          <p>Overview dashboard</p>
+          <span class="date-container">
+            18 Feb 2023 - <span id="date"> &nbsp; 27 Feb 2023</span>
+          </span>
+        </nav>
+        <hr class="lining" />
+      </div>
+
+      <section class="dashboard-section">
+
+          <div class="main-container">
+              <div class="main-left-section">
+                  <div class="total-users-container" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
+                <i class="fa-solid fa-users"></i>
+                <div class="count-card">
+                    <p class="total-count" id="total-users-count">0</p>
+                    <p class="total-count-title">Total Users</p>
+                </div>
+            </div>
+                  <div class="total-users-container" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                <div class="count-card">
+                    <p class="total-count" id="total-orders">0</p>
+                    <p class="total-count-title">Total Orders</p>
+                </div>
+            </div>
+                  <div class="total-users-container" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                <div class="count-card">
+                    <p class="total-count" id="total-available-products">0</p>
+                    <p class="total-count-title">Available Products</p>
+                </div>
+            </div>
+        </div>
+        <section class="right-section">
+            <span class="total-sale">Total Sale Price :- <span id="totalPrice">0</span></span>
+            <div class="cards-container"></div>
+        </section>
+    </div>
+
+</section>
+
+<section class="charts-section">
+  <div class="chart-container">
+    <table id="sales-chart-table"></table>
+    <table id="price-chart-table"></table>
+  </div>
+  <div class="most-active-users-container">
+    <p class="most-active-users-tag">Most Active Users</p>
+    <div class="users-details-container" id="most-active-users-details-container">
+    <div class="cards-title active-user-card-title">
+      <p class="most-acive-user-p">User</p>
+      <p class="most-acive-user-p">Id</p>
+      <p class="most-acive-user-p">Name</p>
+      <p class="most-acive-user-p">Total Orders</p>
+      <p class="most-acive-user-p">Total Price</p>
+    </div>
+    <div class="card animatedCard active-user-card-title" data-aos-delay="100" data-aos-duration="1000">
+      <img src="https://cdn-icons-png.flaticon.com/512/190/190670.png" alt="" class="active-user-avatar">
+      <p class="most-acive-user-p">#magna_21</p>
+      <p class="most-acive-user-p">Afroz Khan</p>
+      <p class="most-acive-user-p">34</p>
+      <p class="most-acive-user-p">423423</p>
+    </div>
+  </div>
+</div>
+</section>
+
+    <!-- users dettils  -->
+
+    <section class="users-section" id="usersScroll">
+      <div class="users-details-container" id="users-details-container">
+      </div>
+    </section>
+
+
+<!-- admin products hanler -->
+<section id="admin_product">
+<!-- popup box -->
+<section class="editProduct-popup-section">
+  <div id="editPopup">
+    <i class="fa-solid fa-circle-xmark" id="close-popup-Editform"></i>
+    <form id="edit-product">
+      <label for="name">NAME: </label>
+      <input type="text" placeholder="Name" id="name">
+      <label for="image">IMAGE</label>
+      <input type="text" placeholder="Enter Image Link" id="image">
+      <label for="category">CATEGORY</label>
+      <input type="text" placeholder="Category" id="category">
+      <label for="tag">SPECIAL TAG</label>
+      <input type="text" placeholder="Special Tag" id="tag">
+      <label for="price">PRICE</label>
+      <input type="number" placeholder="Price" id="price">
+      <input type="submit" id="editProduct" value="SUBMIT">
+    </form>
+  </div>
+</section>
+
+
+<!-- header -->
+
+
+<!-- content -->
+
+<h1 class="headings">PRODUCT MANAGEMENT</h1>
+
+<div class="swipper_container" data-aos="zoom-in">
+
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img
+            src="https://images.dxl.com/is/image/CasualMale/221011_DXL_PLP_CAROUSELS_4384_Polos_rugbys"
+            alt=""
+          />
+          <p>Polos & Rugbys</p>
+        </div>
+        <div class="swiper-slide" id="tshirts">
+          <img
+            src="https://images.dxl.com/is/image/CasualMale/221011_DXL_PLP_CAROUSELS_4384_tshirt"
+            alt=""
+          />
+          <p>T-Shirts</p>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://images.dxl.com/is/image/CasualMale/221011_DXL_PLP_CAROUSELS_4384_Casual_shirts"
+            alt=""
+          />
+          <p>Casual Shirts</p>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://images.dxl.com/is/image/CasualMale/221011_DXL_PLP_CAROUSELS_4384_Graphic_Tees"
+            alt=""
+          />
+          <p>Graphic Tees</p>
+        </div>
+        <div class="swiper-slide" id="hoodies">
+          <img
+            src="https://images.dxl.com/is/image/CasualMale/221011_DXL_PLP_CAROUSELS_4384_Sweatshirts"
+            alt=""
+          />
+          <p>Hoodies & Sweatshirts</p>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://images.dxl.com/is/image/CasualMale/221011_DXL_PLP_CAROUSELS_4384_DressShirts"
+            alt=""
+          />
+          <p>Dress Shirts</p>
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://images.dxl.com/is/image/CasualMale/221011_DXL_PLP_CAROUSELS_4384_Workwear"
+            alt=""
+          />
+          <p>Workwear Shirts</p>
+        </div>
+        <div class="swiper-slide" id="pants">
+          <img
+            src="https://images.dxl.com/is/image/CasualMale/221011_DXL_PLP_CAROUSELS_4384_Casual_Pants"
+            alt=""
+          />
+          <p>Pants & Shorts</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<h1 class="headings">PRODUCT LIST</h1>
+
+<div class="functions">
+  <div class="searchFunc">
+    <label for="search">Search</label>
+    <input type="text" placeholder="Search by Name or Category" id="search">
+    <!-- <input type="submit" id="searchSub"> -->
+    <i class="fa fa-search" aria-hidden="true" id="search_icon"></i>
+  </div>
+
+  <select name="Price" id="sortByPrice">
+    <option value="default">SORT BY PRICE</option>
+    <option value="Low to High">Low to High</option>
+    <option value="High to Low">High to Low</option>
+  </select>
+</div>
+
+
+<div id="displayContainer" data-aos="zoom-in">
+  <!--  -->
+  <!-- appending all products data here -->
+
+</div>
+
+
+<div class="paginationContainer">
+  <div id="pagination"></div>
+</div>
+</section>
+
+<script src="./scripts/admin_productsDashboard.js"></script>
+
+
+<!-- order tracking page starts -->
+<section id="order-tracking-page">
+  <h1>ORDER MANAGEMENT</h1>
+  <nav>
+      <p id="all">All Orders</p>
+      <p id="pending">Dispatch Pending</p>
+      <p id="initiated">Dispatch Initiated</p>
+      <p id="allcompleted">Order Completed</p>
+      <p id="requested">Return/Exchange Requested</p>
+  </nav>
+  <hr>
+
+  <div class="functions">
+      <div class="searchFunc">
+          <label for="search">Search</label>
+          <input type="text" placeholder="Search by ID, Name or Order Details" id="search">
+          <input type="submit" id="searchSub">
+          <i class="fa fa-search" aria-hidden="true" id="search_icon"></i>
+      </div>
+  </div>
+
+  <table>
+      <thead>
+          <th>Customer ID</th>
+          <th>Customer</th>
+          <th style="width:30%">Order Details</th>
+          <th>Estimated Delivery Date</th>
+          <th>Order Total</th>
+          <th>Order Status</th>
+          <th>Payment Mode</th>
+          <!-- <th>Update Status</th> -->
+      </thead>
+      <tbody>
+
+      </tbody>
+  </table>
+
+  <!-- popup box -->
+
+  <section class="popupSection">
+      <div id="updatePopup">
+          <i class="fa-solid fa-circle-xmark" id="close-popup-updateform"></i>
+          <form id="update-order">
+<h3>Update Order Status</h3>
+<div class="radio">
+  <div>
+              <input type="radio" name="order-status" id="dispatchPending" value="Dispatch Pending">
+              <label for="dispatchPending">Dispatch Pending</label>
+          </div>
+          <div>
+              <input type="radio" name="order-status" id="dispatchInitiated" value="Dispatch Initiated">
+              <label for="dispatchInitiated">Dispatch Initiated</label>
+          </div>
+          <div>
+              <input type="radio" name="order-status" id="completed" value="Completed">
+              <label for="completed">Completed</label>
+          </div>
+          <div>
+              <input type="radio" name="order-status" id="request" value="Return/Exchange Requested">
+              <label for="request">Return/Exchange Requested</label>
+          </div>
+          </div>
+
+              <label for="completed">Estimated Date of Delivery: </label>
+              <input type="date" id="date-of-order">
+
+              <input type="submit" id="updateProduct" value="SUBMIT">
+          </form>
+      </div>
+  </section>
+</section>
+
+<script src="./scripts/admin_orderTracking.js"></script>
+<!-- order page ends -->
+
+
+    <section class="employees-section" id="outTeam">
+      <p class="ourTeam">Our Team</p>
+      <div class="employees-container">
+        <div class="employeeCard" data-aos="zoom-in" data-aos-delay="50" data-aos-duration="500">
+          <img
+            src="./images/kinjal.jpg"
+            alt=""
+          />
+          <p class="employeeName">Kinjal Momaya</p>
+          <p class="postTitle">Software Engineer
+            <p class="postSubtitle">Fullstack Developer</p>
+          </p>
+          <p class="role">
+            Server APIs, Admin product page, Orders Dashboard, Edit and Delete operations
+          </p>
+          <p class="email">kinjalmomaya99@gmail.com</p>
+        </div>
+        <div class="employeeCard"  data-aos="zoom-out" data-aos-delay="100" data-aos-duration="1000">
+          <img
+            src="./images/gaurav.jpg"
+            alt=""
+          />
+          <p class="employeeName">Gaurav Shukla</p>
+          <p class="postTitle">Software Engineer
+            <p class="postSubtitle">Fullstack Developer</p>
+          </p>
+          <p class="role">
+            Product page, Add to Cart, Filters, Login and SignUp forms, Navigation bar
+          </p>
+          <p class="email">gauravshukla.ec1022@gmail.com</p>
+        </div>
+        <div class="employeeCard" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="700">
+          <img
+            src="./images/akaka.jpeg"
+            alt=""
+          />
+          <p class="employeeName">Afroz Khan</p>
+          <p class="postTitle">Software Engineer
+            <p class="postSubtitle">Fullstack Developer</p>
+          </p>
+          <p class="role">
+            JSON files, Admin dashboard, Admin users, Admin employees, Add new product operation
+          </p>
+          <p class="email">afrozsaifi80@gmail.com</p>
+        </div>
+        <div class="employeeCard" data-aos="zoom-out" data-aos-delay="100" data-aos-duration="1000">
+          <img
+            src="./images/hemant.jpg"
+            alt=""
+          />
+          <p class="employeeName">Hemant Singh Bangari</p>
+          <p class="postTitle">Software Engineer
+            <p class="postSubtitle">Fullstack Developer</p>
+          </p>
+          <p class="role">
+            Cart page, View product page, Checkout order operation, Order Status
+          </p>
+          <p class="email">hemant2307sb@gmail.com</p>
+        </div>
+        <div class="employeeCard" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+          <img
+            src="./images/sweta.jpg"
+            alt=""
+          />
+          <p class="employeeName">Sweta Singh</p>
+          <p class="postTitle">Software Engineer
+            <p class="postSubtitle">Fullstack Developer</p>
+          </p>
+          <p class="role">
+            Home page footer
+          </p>
+          <p class="email">sweta235410@gmail.com</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-section">
+      <footer>
+      
+
+        <div class="row">
+             <div class="col-3">                
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">CUSTOMER SUPPORT</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href=""><span>Curbside Pickup</span></a></li>
+                     <li><a href=""><span>DXL Deals</span></a></li>
+                     <li><a href=""><span>DXL Rewards Club</span></a></li>
+                     <li><a href=""><span>Find a Wish List</span></a></li>
+                     <li><a href=""><span>Shipping & Delivery</span></a></li>
+                 </ul>
+             </div>
+             <div class="col-3">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">CONTACT US</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href=""><span>Customer Service</span></a></li>
+                     <li><a href=""><span>Chat Now</span></a></li>
+                     <li><a href=""><span>Email Us</span></a></li>
+                     <li><a href=""><span>1.855.746.7395</span></a></li>
+                     <li><a href=""><span>Find a Store</span></a></li>
+                 </ul>
+             </div>
+             <div class="col-3">
+                 <div class="link-cat" onclick="footerToggle(this)">
+                     <span class="footer-toggle"></span>
+                     <span class="footer-cat">Quick Links</span>
+                 </div>
+                 <ul class="footer-cat-links">
+                     <li><a href=""><span>Reviews</span></a></li>
+                     <li><a href=""><span>Terms & Condition</span></a></li>
+                     <li><a href=""><span>Disclaimer</span></a></li>
+                     <li><a href=""><span>Site Map</span></a></li>
+                 </ul>
+             </div>
+             <div class="col-3" id="newsletter">
+                 <span>SIGN UP FOR OUR VERY BEST DEALS</span>
+                 <form id="subscribe">
+                     <input type="email" id="subscriber-email" placeholder="Enter Email Address"/>
+                     <input type="submit" value="Subscribe" id="btn-scribe"/>
+                 </form>
+                 
+                 <div class="social-links social-2">
+                     <a href=""><i class="fab fa-facebook-f"></i></a>
+                     <a href=""><i class="fab fa-twitter"></i></a>
+                     <a href=""><i class="fab fa-linkedin-in"></i></a>
+                     <a href=""><i class="fab fa-instagram"></i></a>
+                     <a href=""><i class="fab fa-tumblr"></i></a>
+                     <a href=""><i class="fab fa-reddit-alien"></i></a>
+                 </div>
+ 
+                 <div id="address">
+                     <span>Office Location</span>
+                     <ul>
+                         <li>
+                             <i class="far fa-building"></i>
+                             <div>Los Angeles<br/>
+                                 (310) 390-3845
+                                 5905 Sepulveda Boulevard
+                                 Culver City, CA 90230</div>
+                         </li>
+                         <li>
+                             <i class="fas fa-gopuram"></i>
+                             <div>Delhi<br/>
+                             Office 150B, Behind Sana Gate Char Bhuja Tower, Station Road, Delhi</div>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+             <div class="social-links social-1 col-6">
+                 <a href=""><i class="fab fa-facebook-f"></i></a>
+                 <a href=""><i class="fab fa-twitter"></i></a>
+                 <a href=""><i class="fab fa-linkedin-in"></i></a>
+                 <a href=""><i class="fab fa-instagram"></i></a>
+                 <a href=""><i class="fab fa-tumblr"></i></a>
+                 <a href=""><i class="fab fa-reddit-alien"></i></a>
+             </div>
+        </div>
+        <div id="copyright">
+             All Rights Reserved 2011-2023
+        </div>
+        <div id="owner">
+            <span>
+             Destination XL Group, Inc. All Rights Reserved.
+            </span>
+        </div>
+     </footer>
+    </section>
+
+
+
+    
+
+    </body>
+<script src="./scripts/admin.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</html>
